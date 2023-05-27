@@ -4,6 +4,6 @@ using Genie.Renderer.Json, Genie
 
 route("/", UploadsController.index)
 route("/upload", method = POST) do 
-  println("file uploaded!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-  Json.json(Dict("url" => "fuck"))
+  
+  Json.json(Dict("url" => "custom url"))
 end
