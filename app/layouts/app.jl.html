@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploader</title>
+
+    <style>
+      body {
+        
+        height: 100%;
+        background-color: green;
+        
+      }
+
+      
+      
+      ul.topnav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+      
+      ul.topnav li {float: left;}
+      
+      ul.topnav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      ul.topnav .dropdown {
+        display: inline-block;
+        margin-right: 2%;
+       
+      }
+
+      ul.topnav .dropdown:hover {
+        background-color: red;
+      }
+
+      ul.topnav .dropdown:hover  .dropdown-content{
+        display: block;
+      }
+
+      ul.topnav .dropdown .dropdown-content {
+        display: none;
+        color: white;
+        text-align: center;
+        position: absolute;
+        background-color: #04AA6D;
+      }
+      
+      ul.topnav li a:hover:not(.active) {background-color: #111;}
+      
+      ul.topnav li a.active {background-color: #04AA6D;}
+      
+      ul.topnav li.right {float: right; border-left: 1px solid #bbb; border-right: 1px solid #bbb;}
+      
+      
+      @media screen and (max-width: 600px) {
+        ul.topnav li.right, 
+        ul.topnav li {float: none;}
+      }
+      </style>
+  </head>
+  <body>
+
+    <%
+     
+    3 > 2 ? partial(joinpath(Genie.config.path_app, "layouts", "navbars", "authorized_navbar.jl.html")) : partial(joinpath(Genie.config.path_app, "layouts", "navbars", "unauthorized_navbar.jl.html"))
+    
+      @yield
+    %>
+  </body>
+</html>
+
